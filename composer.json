@@ -1,0 +1,21 @@
+{
+    "name": "loeyae/loeye-sample",
+    "description": "project of loeye2.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Zhang Yi",
+            "email": "loeyae@gmail.com"
+        }
+    ],
+    "require": {
+        "loeyae/loeye2": "^1.0.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/"
+        }
+    },
+    "minimum-stability": "stable"
+}
