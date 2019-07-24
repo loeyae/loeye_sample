@@ -113,15 +113,26 @@ class TestController extends Controller {
      */
     public function EntityAction()
     {
-        /**
         $user = $this->context->db()->entity(\app\models\entity\User::class, 1);
         $user->setName('test-001@'. time());
-        $this->context->db()->save($user);
-         */
+        $this->context->db()->refresh($user);
         $user = $this->context->db()->one(\app\models\entity\User::class, ['name' => 'test-002']);
         $this->context->set('test.output', $user);
         $this->view = ['tpl' => 'sample.index.tpl'];
     }
+
+    /**
+     * EntityAction
+     *
+     * @return void
+     */
+    public function RepositoryAction()
+    {
+        $userList = $this->context->db()->repository(\app\models\entity\User::class)->getAllUser();
+        $this->context->set('test.output', $userList);
+        $this->view = ['tpl' => 'sample.index.tpl'];
+    }
+
     /**
      * SqlAction
      *

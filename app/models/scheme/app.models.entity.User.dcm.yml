@@ -1,5 +1,6 @@
 app\models\entity\User:
     type: entity
+    repositoryClass: app\models\repository\UserRepository
     table: user
     id:
         id:

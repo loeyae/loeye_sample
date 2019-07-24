@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * User
  *
  * @ORM\Table(name="user")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="app\models\repository\UserRepository")
  */
 class User
 {
@@ -49,7 +49,7 @@ class User
     public function setName($name)
     {
         $this->name = $name;
-    
+
         return $this;
     }
 
