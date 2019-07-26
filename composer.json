@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "loeyae/loeye2": "^1.0.5"
+        "loeyae/loeye2": "^1.0.6"
     },
     "autoload": {
         "psr-4": {
