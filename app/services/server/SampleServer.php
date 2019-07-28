@@ -60,4 +60,14 @@ class SampleServer extends AbstractServer
         return $query->getArrayResult();
     }
 
+    /**
+     * allUser
+     *
+     * @return array of \app\models\entity\User
+     */
+    public function allUser()
+    {
+        return $this->db->repository($this->entity)->findAll();
+    }
+
 }
