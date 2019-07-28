@@ -53,7 +53,7 @@ class SampleServer extends AbstractServer
      */
     public function listUser($id = 0)
     {
-        $qb = $this->db->createQueryBuilder()->select('u')->from($this->entity, 'u');
+        $qb = $this->db->createQueryBuilder()->select('u.id')->from($this->entity, 'u');
         $exr = $qb->expr()->gte('u.id', $id);
         $qb->where($exr)->setMaxResults(10);
         $query = $qb->getQuery();
