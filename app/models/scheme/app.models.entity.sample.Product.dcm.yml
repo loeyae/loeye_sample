@@ -1,14 +1,14 @@
-app\models\entity\Product:
+app\models\entity\sample\Product:
     type: entity
     table: product
     indexes:
-        type:
-            columns:
-                - type
         name:
             columns:
                 - name
                 - created
+        type:
+            columns:
+                - type
     id:
         id:
             type: integer

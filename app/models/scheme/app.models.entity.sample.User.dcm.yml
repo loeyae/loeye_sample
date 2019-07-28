@@ -1,6 +1,6 @@
-app\models\entity\User:
+app\models\entity\sample\User:
     type: entity
-    repositoryClass: app\models\repository\UserRepository
+    repositoryClass: app\models\repository\sample\UserRepository
     table: user
     id:
         id:
@@ -18,4 +18,10 @@ app\models\entity\User:
             length: 255
             options:
                 fixed: false
+        password:
+            type: string
+            nullable: true
+            length: 41
+            options:
+                fixed: true
     lifecycleCallbacks: {  }

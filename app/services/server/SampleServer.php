@@ -29,7 +29,12 @@ class SampleServer extends AbstractServer
     protected function init()
     {
         $this->db = \loeye\base\DB::getInstance($this->config);
-        $this->entity = \app\models\entity\User::class;
+        $this->entity = \app\models\entity\sample\User::class;
+    }
+
+    public function createMember($entity)
+    {
+        return $this->db->repository($this->entity)->createMember($entity);
     }
 
     /**

@@ -38,7 +38,7 @@ class TokenServer extends AbstractServer
     protected function init()
     {
         $this->db = \loeye\base\DB::getInstance($this->config);
-        $this->entity = \app\models\entity\Token::class;
+        $this->entity = \app\models\entity\sample\Token::class;
     }
 
     /**

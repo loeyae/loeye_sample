@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models\entity;
+namespace app\models\entity\sample;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * User
  *
  * @ORM\Table(name="user")
- * @ORM\Entity(repositoryClass="app\models\repository\UserRepository")
+ * @ORM\Entity(repositoryClass="app\models\repository\sample\UserRepository")
  */
 class User
 {
@@ -27,6 +27,13 @@ class User
      * @ORM\Column(name="name", type="string", length=255, nullable=false)
      */
     private $name;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="password", type="string", length=41, nullable=true, options={"fixed"=true})
+     */
+    private $password;
 
 
     /**
@@ -61,5 +68,29 @@ class User
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set password.
+     *
+     * @param string|null $password
+     *
+     * @return User
+     */
+    public function setPassword($password = null)
+    {
+        $this->password = md5($password. md5($password));
+
+        return $this;
+    }
+
+    /**
+     * Get password.
+     *
+     * @return string|null
+     */
+    public function getPassword()
+    {
+        return $this->password;
     }
 }

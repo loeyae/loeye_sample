@@ -113,22 +113,22 @@ class TestController extends Controller {
      */
     public function EntityAction()
     {
-        $user = $this->context->db()->entity(\app\models\entity\User::class, 1);
+        $user = $this->context->db()->entity(\app\models\entity\sample\User::class, 1);
         $user->setName('test-001@'. time());
         $this->context->db()->refresh($user);
-        $user = $this->context->db()->one(\app\models\entity\User::class, ['name' => 'test-002']);
+        $user = $this->context->db()->one(\app\models\entity\sample\User::class, ['name' => 'test-002']);
         $this->context->set('test.output', $user);
         $this->view = ['tpl' => 'sample.index.tpl'];
     }
 
     /**
-     * EntityAction
+     * RepositoryAction
      *
      * @return void
      */
     public function RepositoryAction()
     {
-        $userList = $this->context->db()->repository(\app\models\entity\User::class)->getAllUser();
+        $userList = $this->context->db()->repository(\app\models\entity\sample\User::class)->getAllUser();
         $this->context->set('test.output', $userList);
         $this->view = ['tpl' => 'sample.index.tpl'];
     }
@@ -140,7 +140,7 @@ class TestController extends Controller {
      */
     public function SqlAction()
     {
-        $qb = $this->context->db()->createQueryBuilder()->select('u')->where('u.id = 1')->from(\app\models\entity\User::class, 'u');
+        $qb = $this->context->db()->createQueryBuilder()->select('u')->where('u.id = 1')->from(\app\models\entity\sample\User::class, 'u');
         $query = $qb->getQuery();
         var_dump($query->getSQL());
         $user = $query->getResult();

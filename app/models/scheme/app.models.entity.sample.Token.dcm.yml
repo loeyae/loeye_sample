@@ -1,4 +1,4 @@
-app\models\entity\Token:
+app\models\entity\sample\Token:
     type: entity
     table: token
     id:
