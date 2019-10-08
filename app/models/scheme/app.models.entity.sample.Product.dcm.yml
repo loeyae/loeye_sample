@@ -45,9 +45,16 @@ app\models\entity\sample\Product:
             length: 0
             options:
                 fixed: false
+        ctime:
+            type: datetime
+            nullable: false
+            gedmo:
+              timestampable:
+                on: create
         utime:
             type: datetime
             nullable: false
-            options:
-                default: CURRENT_TIMESTAMP
+            gedmo:
+              timestampable:
+                on: update
     lifecycleCallbacks: {  }

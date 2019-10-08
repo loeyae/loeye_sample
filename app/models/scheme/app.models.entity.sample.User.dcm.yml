@@ -24,4 +24,16 @@ app\models\entity\sample\User:
             length: 41
             options:
                 fixed: true
+        ctime:
+            type: datetime
+            nullable: false
+            gedmo:
+              timestampable:
+                on: create
+        utime:
+            type: datetime
+            nullable: false
+            gedmo:
+              timestampable:
+                on: update
     lifecycleCallbacks: {  }

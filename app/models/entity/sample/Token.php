@@ -15,7 +15,7 @@ class Token
     /**
      * @var string
      *
-     * @ORM\Column(name="appid", type="string", length=16, options={"fixed"=true})
+     * @ORM\Column(name="appid", type="string", length=16, precision=0, scale=0, nullable=false, options={"fixed"=true}, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,37 +24,37 @@ class Token
     /**
      * @var string|null
      *
-     * @ORM\Column(name="secret", type="string", length=32, nullable=true, options={"fixed"=true})
+     * @ORM\Column(name="secret", type="string", length=32, precision=0, scale=0, nullable=true, options={"fixed"=true}, unique=false)
      */
     private $secret;
 
     /**
      * @var string|null
      *
-     * @ORM\Column(name="token", type="text", length=65535, nullable=true)
+     * @ORM\Column(name="token", type="text", length=65535, precision=0, scale=0, nullable=true, unique=false)
      */
     private $token;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="create_time", type="integer", nullable=false)
+     * @ORM\Column(name="create_time", type="integer", precision=0, scale=0, nullable=false, unique=false)
      */
     private $createTime;
 
     /**
      * @var int|null
      *
-     * @ORM\Column(name="refresh_time", type="integer", nullable=true)
+     * @ORM\Column(name="refresh_time", type="integer", precision=0, scale=0, nullable=true, unique=false)
      */
     private $refreshTime;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="expire_in", type="integer", nullable=false)
+     * @ORM\Column(name="expire_in", type="integer", precision=0, scale=0, nullable=false, unique=false)
      */
-    private $expireIn = '0';
+    private $expireIn;
 
 
     /**

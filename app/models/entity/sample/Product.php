@@ -3,6 +3,7 @@
 namespace app\models\entity\sample;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * Product
@@ -15,7 +16,7 @@ class Product
     /**
      * @var int
      *
-     * @ORM\Column(name="id", type="integer", options={"comment"="ID"})
+     * @ORM\Column(name="id", type="integer", precision=0, scale=0, nullable=false, options={"comment"="ID"}, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,37 +25,46 @@ class Product
     /**
      * @var int
      *
-     * @ORM\Column(name="type", type="integer", nullable=false, options={"comment"="分类"})
+     * @ORM\Column(name="type", type="integer", precision=0, scale=0, nullable=false, options={"comment"="分类"}, unique=false)
      */
     private $type;
 
     /**
      * @var string|null
      *
-     * @ORM\Column(name="name", type="string", length=32, nullable=true, options={"comment"="名称"})
+     * @ORM\Column(name="name", type="string", length=32, precision=0, scale=0, nullable=true, options={"comment"="名称"}, unique=false)
      */
     private $name;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="created", type="integer", nullable=false, options={"unsigned"=true,"comment"="生成时间"})
+     * @ORM\Column(name="created", type="integer", precision=0, scale=0, nullable=false, options={"unsigned"=true,"comment"="生成时间"}, unique=false)
      */
     private $created;
 
     /**
      * @var string|null
      *
-     * @ORM\Column(name="content", type="text", length=0, nullable=true)
+     * @ORM\Column(name="content", type="text", length=0, precision=0, scale=0, nullable=true, unique=false)
      */
     private $content;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="utime", type="datetime", nullable=false, options={"default"="CURRENT_TIMESTAMP"})
+     * @Gedmo\Timestampable(on="create")
+     * @ORM\Column(name="ctime", type="datetime", precision=0, scale=0, nullable=false, options={"default"="CURRENT_TIMESTAMP"}, unique=false)
      */
-    private $utime = 'CURRENT_TIMESTAMP';
+    private $ctime;
+
+    /**
+     * @var \DateTime
+     *
+     * @Gedmo\Timestampable(on="update")
+     * @ORM\Column(name="utime", type="datetime", precision=0, scale=0, nullable=false, options={"default"="CURRENT_TIMESTAMP"}, unique=false)
+     */
+    private $utime;
 
 
     /**
@@ -161,6 +171,30 @@ class Product
     public function getContent()
     {
         return $this->content;
+    }
+
+    /**
+     * Set ctime.
+     *
+     * @param \DateTime $ctime
+     *
+     * @return Product
+     */
+    public function setCtime($ctime)
+    {
+        $this->ctime = $ctime;
+
+        return $this;
+    }
+
+    /**
+     * Get ctime.
+     *
+     * @return \DateTime
+     */
+    public function getCtime()
+    {
+        return $this->ctime;
     }
 
     /**

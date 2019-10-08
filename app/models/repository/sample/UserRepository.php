@@ -27,7 +27,7 @@ class UserRepository extends EntityRepository {
         $sql = "INSERT INTO `user` SET ";
         $params = [];
         $set = [];
-        $data = \loeye\service\Handler::entity2array($data);
+        $data = \loeye\base\Utils::entity2array($this->_em, $data);
         foreach ($data as $key => $value) {
             if (is_null($value)) {
                 continue;
