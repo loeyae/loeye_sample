@@ -170,8 +170,6 @@ class TestController extends Controller {
 
     public function ServerAction()
     {
-        $client = new \app\services\client\SampleClient();
-        $user = $client->listUser();
         $this->context->set('test.output', $_SERVER);
         $this->context->set('test.output1', $_ENV);
         $this->view = ['tpl' => 'sample.index.tpl'];
