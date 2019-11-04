@@ -2,9 +2,13 @@
 <{block name="title"}>测试<{/block}>
 <{block name="body"}>
             <div>
-            <{$context_data['test.output']|var_dump}>
+                <pre>
+                    <{$context_data['test.output']|print_r}>
+                </pre>
             </div>
             <div>
-            <{$context_data['test.output1']|var_dump}>
+                <pre>
+                    <{$context_data['test.output1']|print_r}>
+                </pre>
             </div>
 <{/block}>
