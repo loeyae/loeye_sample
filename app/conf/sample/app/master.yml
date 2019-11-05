@@ -11,7 +11,7 @@
 #
 - settings: [master]
   constants:
-      BASE_SERVER_URL: "http://localhost:8109"
+      BASE_SERVER_URL: "${SAMPLE_BASE_SERVER_URL:http://localhost:8109}"
   configuration:
       property_name: tools
       timezone: Asia/Shanghai
