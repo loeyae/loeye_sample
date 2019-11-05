@@ -11,5 +11,5 @@
 #
 - settings: [master]
   service:
-      server_url: "http://localhost:8111"
+      server_url: "${SAMPLE_SERVER_URL:http://localhost:8111}"
       timeout: 30
