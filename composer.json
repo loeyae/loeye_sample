@@ -10,7 +10,8 @@
         }
     ],
     "require": {
-        "loeyae/loeye2": ">1.0.9"
+        "loeyae/loeye2": ">1.0.12",
+        "symfony/dependency-injection": "^4.3.1"
     },
     "autoload": {
         "psr-4": {
