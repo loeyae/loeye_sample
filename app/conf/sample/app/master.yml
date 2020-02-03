@@ -16,8 +16,10 @@
       property_name: tools
       timezone: Asia/Shanghai
   application:
-      database: default
+      database:
+        default: default
       cache: file
   locale:
       default: zh_CN
+      basename: lang
       supported_languages: [zh_CN]
