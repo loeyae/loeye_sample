@@ -175,4 +175,13 @@ class TestController extends Controller {
         $this->view = ['tpl' => 'sample.index.tpl'];
     }
 
+    public function configAction()
+    {
+        $locator = new \loeye\config\FileLocator(PROJECT_CONFIG_DIR);
+        $loador = new \loeye\config\YamlFileLoader($locator);
+        $loador->setCurrentDir('client/smaple/');
+        $files = $loador->import('*.yml');
+        var_dump($files);
+    }
+
 }
