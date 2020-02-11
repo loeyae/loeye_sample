@@ -9,12 +9,8 @@ see LICENSE for more details: http://www.apache.org/licenses/LICENSE-2.0.
 @import '/bootstrap/dist/css/bootstrap.min.css';
 @import '/bootstrap/dist/css/bootstrap-grid.min.css';
 @import '/bootstrap/dist/css/bootstrap-reboot.min.css';
+@import '/bootstrap/site/docs/4.4/assets/css/docs.min.css';
 .logo{
     width: 40px;
     height: 40px;
-}
-.bd-navbar {
-    min-height: 4rem;
-    background-color: #efefef;
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .05), inset 0 -1px 0 rgba(0, 0, 0, .1);
 }
