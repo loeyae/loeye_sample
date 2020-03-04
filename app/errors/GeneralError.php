@@ -30,7 +30,7 @@ see LICENSE for more details: http://www.apache.org/licenses/LICENSE-2.0.
             <section id="content" class="text-center">
                 <p class="text-danger">
                 <?php
-                if ($exc instanceof \loeye\error\ResourceException) {
+                if ($e instanceof \loeye\error\ResourceException) {
                     $message = '找不到了';
                 } else {
                     $message = '内部错误';
@@ -48,3 +48,6 @@ see LICENSE for more details: http://www.apache.org/licenses/LICENSE-2.0.
         <script type="text/javascript" src="/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
+<!--[CDATA[
+        <?php print_r(debug_backtrace()) ?>
+]]>
