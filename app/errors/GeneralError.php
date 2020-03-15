@@ -6,10 +6,6 @@
  * @license http://www.apache.org/licenses/LICENSE-2.0 Apache License
  * @version GIT: $id $
  */
-header('X-ESI: ON');
-include_once PROJECT_LIBRARIES_BASE_DIR .'/AliUtils.php';
-
-$esi = LOEYE\LoeyeEsiUtil::getInstance();
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,32 +13,13 @@ $esi = LOEYE\LoeyeEsiUtil::getInstance();
         <title>出错了</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--[if lte IE 8]><script src="/js/ie/html5shiv.js"></script><![endif]-->
-        <link rel="stylesheet" href="/css/main.css" />
-        <link rel="stylesheet" href="/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="/css/style.css" />
-        <!--[if lte IE 9]><link rel="stylesheet" href="/css/ie9.css" /><![endif]-->
-        <?php \LOEYE\LoeyeUtils::includeView('ali/common/header.phtml', array('context' => $context)); ?>
+        <link type="text/css" rel="stylesheet" href="/css/bootstrap.css" />
     </head>
     <body>
-        <div id="header-wrapper">
-            <header id="header" class="container">
-                <div class="row">
-                    <?php $esi->includeModule('ali.home.nav') ?>
-                    <div class="12u">
-
-                        <!-- Logo -->
-                        <h1><a href="/" id="logo">Loeyae.com</a></h1>
-
-                        <!-- Nav -->
-                        <nav id="nav">
-                            <?php $esi->includeModule('ali.menu', array('position'=>1, 'id' => 'navigation')); ?>
-                        </nav>
-
-                    </div>
-                </div>
-            </header>
-        </div>
+        <header id="header" class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
+            <a class="navbar-brand mr-0 mr-md-2" href="/"></a>
+            <div class=""></div>
+        </header>
         <div class="container-fluid min-vh-100">
             <nav id="nav" class="nav clearfix col-12 text-center row-cols-1 my-2">
                 <a href="/" class="float-left col-auto">首页</a><?php if (!empty($_SERVER['HTTP_REFERER'])) { ?><a href="<?= $_SERVER['HTTP_REFERER']; ?>" class="float-right col-auto">返回前页</a><?php } ?>
