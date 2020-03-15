@@ -24,7 +24,7 @@
             <nav id="nav" class="nav clearfix col-12 text-center row-cols-1 my-2">
                 <a href="/" class="float-left col-auto">首页</a><?php if (!empty($_SERVER['HTTP_REFERER'])) { ?><a href="<?= $_SERVER['HTTP_REFERER']; ?>" class="float-right col-auto">返回前页</a><?php } ?>
             </nav>
-            <section id="content" class="text-center">
+            <section id="content" class="text-center mh-100">
                     <?php
                     $appConfig = $context->getAppConfig();
                     $debug = $appConfig ? $appConfig->getSetting('debug', false) : false;
