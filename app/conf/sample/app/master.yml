@@ -23,3 +23,62 @@
       default: zh_CN
       basename: lang
       supported_languages: [zh_CN]
+  rabbitmq:
+    - servers:
+        - host: 192.168.1.110
+          port: 5672
+          user: admin
+          password: admin
+          vhost: /
+      queue:
+        - exchange: zy-topic
+          exchange_type: topic
+          routing_key: zy-route
+          name: zy-sample-0
+          tag: consumer  
+          callback: ['\app\commands\sample\Consumer', 'exec']
+        - exchange: zy-topic
+          exchange_type: topic
+          routing_key: zy-route
+          name: zy-sample-1
+          tag: consumer  
+        - exchange: zy-topic
+          exchange_type: topic
+          routing_key: zy-route
+          name: zy-sample-2
+          tag: consumer  
+        - exchange: zy-topic
+          exchange_type: topic
+          routing_key: zy-route
+          name: zy-sample-3
+          tag: consumer  
+        - exchange: zy-topic
+          exchange_type: topic
+          routing_key: zy-route
+          name: zy-sample-4
+          tag: consumer  
+        - exchange: zy-topic
+          exchange_type: topic
+          routing_key: zy-route
+          name: zy-sample-5
+          tag: consumer  
+        - exchange: zy-topic
+          exchange_type: topic
+          routing_key: zy-route
+          name: zy-sample-6
+          tag: consumer  
+        - exchange: zy-topic
+          exchange_type: topic
+          routing_key: zy-route
+          name: zy-sample-7
+          tag: consumer  
+        - exchange: zy-topic
+          exchange_type: topic
+          routing_key: zy-route
+          name: zy-sample-8
+          tag: consumer  
+        - exchange: zy-topic
+          exchange_type: topic
+          routing_key: zy-route
+          name: zy-sample-9
+          tag: consumer  
