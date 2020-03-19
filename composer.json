@@ -3,6 +3,9 @@
     "description": "project of loeye2.",
     "type": "project",
     "license": "MIT",
+    "config": {
+        "vendor-dir": "vendor"
+    },
     "authors": [
         {
             "name": "Zhang Yi",
@@ -11,18 +14,29 @@
     ],
     "require": {
         "loeyae/loeye2": ">1.0.12",
-        "symfony/dependency-injection": "^4.3.1"
+        "symfony/dependency-injection": "^4.3.1",
+        "php-amqplib/php-amqplib": "^v2.11.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~7.5.19",
+        "phpunit/php-code-coverage": "~6.1.4"
     },
     "autoload": {
         "psr-4": {
             "app\\": "app/"
         }
     },
+    "autoload-dev": {
+        "classmap": [ "tests/TestCase.php" ],
+        "psr-4": {
+            "app\\unit\\": "tests/app"
+        }
+    },
     "minimum-stability": "stable",
     "repositories": {
         "packagist": {
             "type": "composer",
-            "url": "https://packagist.phpcomposer.com"
+            "url": "https://mirrors.aliyun.com/composer/"
         }
     }
 }
